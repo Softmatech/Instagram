@@ -34,6 +34,9 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     
+    @IBAction func goToPhoto(_ sender: Any) {
+        performSegue(withIdentifier: "composeSegue", sender: nil)
+    }
     
     @IBAction func didTapGesture(_ sender: Any) {
 //        performSegue(withIdentifier: "detailsSegue", sender: nil)
