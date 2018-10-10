@@ -18,6 +18,7 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
     var window: UIWindow?
     var posts: [Post] = []
     var likess = 0
+    let user: PFUser = "" as! PFUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
         tableView.insertSubview(refreshControl, at: 0)
 //        tableView.rowHeight = UITableViewAutomaticDimension
 //        tableView.estimatedRowHeight = 50
-        tableView.rowHeight = 435
+        tableView.rowHeight = 450
         tableView.delegate = self
         tableView.dataSource = self
         self.fetchPosts()
@@ -129,8 +130,7 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
                 }
             }
         }
-        let user = PFUser.current()
-        cell.usernameLabel.text = user?.username
+        cell.usernameLabel.text = user.username
         cell.textViewPost.text = post.caption
         cell.likeCount.text = post.likesCount as? String
         return cell

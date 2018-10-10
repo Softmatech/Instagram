@@ -12,7 +12,6 @@ class composeViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     @IBOutlet weak var postPic: UIImageView!
     @IBOutlet weak var postDesc: UITextField!
-//    var photoSelected : Bool = false
     var window: UIWindow?
     
     override func viewDidLoad() {
@@ -38,10 +37,6 @@ class composeViewController: UIViewController, UIImagePickerControllerDelegate, 
             else{
                 print("Posted Succeessfully")
                 self.performSegue(withIdentifier: "loginSegue2", sender: nil)
-                
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let chatViewController = storyboard.instantiateViewController(withIdentifier: "secondViewController")
-//                self.window?.rootViewController = chatViewController
             }
         }
     }
@@ -61,14 +56,11 @@ class composeViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     // Delegate Protocols
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [String : Any]) {
         // Get the image captured by the UIImagePickerController
         // let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
-        
         postPic.image = editedImage
-//        photoSelected = true
         
         // Dismiss UIImagePickerController to go back to your original view controller
         dismiss(animated: true, completion: nil)
