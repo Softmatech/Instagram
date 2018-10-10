@@ -11,12 +11,17 @@ import UIKit
 class PostCell: UITableViewCell {
 
     @IBOutlet weak var imageViewPost: UIImageView!
-    @IBOutlet weak var textViewPost: UITextField!
+    @IBOutlet weak var textViewPost: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
+    
     var indexPath : IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        userImageView.layer.cornerRadius = 35
+        userImageView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

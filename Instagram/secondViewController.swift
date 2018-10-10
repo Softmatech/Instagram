@@ -20,6 +20,7 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Instagram"
         tableView.separatorStyle = .none
         indicatorSet()
         refreshControl = UIRefreshControl()
@@ -27,7 +28,7 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
         tableView.insertSubview(refreshControl, at: 0)
 //        tableView.rowHeight = UITableViewAutomaticDimension
 //        tableView.estimatedRowHeight = 50
-        tableView.rowHeight = 400
+        tableView.rowHeight = 460
         tableView.delegate = self
         tableView.dataSource = self
         self.fetchPosts()
@@ -122,10 +123,11 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
                 }
                 else {
                     cell.imageViewPost.image = UIImage(data: data!)
-                    
                 }
             }
         }
+        let user = PFUser.current()
+        cell.usernameLabel.text = user?.username
         cell.textViewPost.text = post.caption
         return cell
     }

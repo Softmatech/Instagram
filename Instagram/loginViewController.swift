@@ -22,7 +22,8 @@ class loginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        SignIN.layer.cornerRadius = 5
+        SignIN.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
 
