@@ -19,7 +19,8 @@ class detailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        getDetailsData()
+        print("postsss ",post)
+        getDetailsData()
     }
 
     override func didReceiveMemoryWarning() {

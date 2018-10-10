@@ -148,7 +148,7 @@
                                                 <connections>
                                                     <outlet property="imageViewPost" destination="DG5-ou-Kxg" id="gpe-qP-gmt"/>
                                                     <outlet property="textViewPost" destination="2fO-UM-bt3" id="5AM-ZW-HZZ"/>
-                                                    <segue destination="7lg-5C-pRM" kind="presentation" identifier="detailSegue" id="m6V-yT-xEB"/>
+                                                    <segue destination="7lg-5C-pRM" kind="show" id="Dtc-hJ-3yM"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -199,15 +199,11 @@
                     <connections>
                         <outlet property="indicatorView" destination="cGH-Oz-HcS" id="qYS-fS-XSo"/>
                         <outlet property="tableView" destination="skR-nN-pCO" id="Yl9-cT-KKR"/>
-                        <segue destination="G6d-LT-OXa" kind="presentation" identifier="composeSegue" id="Khp-fN-VND"/>
+                        <segue destination="G6d-LT-OXa" kind="show" identifier="composeSegue" id="DnG-iP-xFN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0m-Lw-JEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="po1-hj-5wv">
-                    <connections>
-                        <action selector="didTapGesture:" destination="ZXS-gb-G6x" id="ujH-4Q-W1c"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="po1-hj-5wv"/>
             </objects>
             <point key="canvasLocation" x="1260" y="884"/>
         </scene>
@@ -263,7 +259,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3022" y="884"/>
+            <point key="canvasLocation" x="3130" y="884"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="LRC-ov-Cw8">
@@ -321,7 +317,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yag-6j-q04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2146" y="1089"/>
+            <point key="canvasLocation" x="2186" y="884"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="MgH-Eu-g5T">
@@ -331,8 +327,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nK-zU-Czb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5nK-zU-Czb">
+                                <rect key="frame" x="0.0" y="57" width="375" height="610"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="njy-5g-P0d">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="417"/>
@@ -366,7 +362,7 @@
                                     <constraint firstItem="njy-5g-P0d" firstAttribute="centerX" secondItem="5nK-zU-Czb" secondAttribute="centerX" id="Oho-lr-DXe"/>
                                     <constraint firstItem="njy-5g-P0d" firstAttribute="top" secondItem="5nK-zU-Czb" secondAttribute="top" id="SuO-DW-1cq"/>
                                     <constraint firstItem="njy-5g-P0d" firstAttribute="leading" secondItem="5nK-zU-Czb" secondAttribute="leading" id="XLU-bG-7QJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="y8S-lJ-7fu" secondAttribute="bottom" constant="102" id="XYd-oW-kVX"/>
+                                    <constraint firstAttribute="bottom" secondItem="y8S-lJ-7fu" secondAttribute="bottom" constant="96" id="XYd-oW-kVX"/>
                                     <constraint firstItem="VSQ-NA-puV" firstAttribute="leading" secondItem="y8S-lJ-7fu" secondAttribute="leading" id="Xq1-D4-aQg"/>
                                     <constraint firstItem="njy-5g-P0d" firstAttribute="centerX" secondItem="VSQ-NA-puV" secondAttribute="centerX" id="Zbw-yz-1fq"/>
                                     <constraint firstAttribute="trailing" secondItem="njy-5g-P0d" secondAttribute="trailing" id="ivP-ZR-Yyr"/>
@@ -379,29 +375,21 @@
                             <constraint firstItem="5nK-zU-Czb" firstAttribute="leading" secondItem="cgJ-nD-LN5" secondAttribute="leading" id="3So-V7-rDv"/>
                             <constraint firstItem="5nK-zU-Czb" firstAttribute="trailing" secondItem="cgJ-nD-LN5" secondAttribute="trailing" id="IbX-w7-JOn"/>
                             <constraint firstItem="5nK-zU-Czb" firstAttribute="bottom" secondItem="cgJ-nD-LN5" secondAttribute="bottom" constant="44" id="KgD-AX-DrL"/>
-                            <constraint firstItem="5nK-zU-Czb" firstAttribute="top" secondItem="cgJ-nD-LN5" secondAttribute="top" id="T2b-zH-zgb"/>
+                            <constraint firstItem="5nK-zU-Czb" firstAttribute="top" secondItem="cgJ-nD-LN5" secondAttribute="top" constant="50" id="T2b-zH-zgb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cgJ-nD-LN5"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="OjC-H0-GiT">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="mkr-WC-jKb">
-                            <connections>
-                                <action selector="backButton:" destination="7lg-5C-pRM" id="HxO-7x-qll"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="fistLabel" destination="VSQ-NA-puV" id="bNn-55-Gv5"/>
                         <outlet property="imageView" destination="njy-5g-P0d" id="Lwm-x4-XOZ"/>
                         <outlet property="secondLabel" destination="y8S-lJ-7fu" id="YWD-Ov-oj4"/>
-                        <segue destination="ZXS-gb-G6x" kind="show" identifier="loginSegue3" id="npZ-ra-GcU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZV-Bg-iGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694" y="1757"/>
+            <point key="canvasLocation" x="1260" y="1786"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qsy-j5-z9l">
@@ -460,24 +448,6 @@
             </objects>
             <point key="canvasLocation" x="2762" y="117"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="W3s-1Z-jTa">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3HA-oO-XFM" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="afA-cD-ODW">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7lg-5C-pRM" kind="relationship" relationship="rootViewController" id="AsO-TS-pOD"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SRl-5O-uiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="823" y="1685"/>
-        </scene>
     </scenes>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
@@ -486,8 +456,7 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Khp-fN-VND"/>
-        <segue reference="m6V-yT-xEB"/>
+        <segue reference="DnG-iP-xFN"/>
         <segue reference="a8l-7A-Jd8"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         
-        readCache()
+//        readCache()
         return true
     }
 

@@ -39,7 +39,7 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func didTapGesture(_ sender: Any) {
-//        performSegue(withIdentifier: "detailsSegue", sender: nil)
+        performSegue(withIdentifier: "detailSegue", sender: nil)
     
     }
     
@@ -89,7 +89,6 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
-
     @IBAction func lougOut(_ sender: UIBarButtonItem) {
         NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
     }
@@ -132,11 +131,14 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let detailSegue = segue.destination as? detailsViewController
+        let detailView = segue.destination as? detailsViewController
         if let cell = sender as! PostCell? {
-            detailSegue?.post = posts[(cell.indexPath?.row)!]
-            print("yesss")
+            if let indexpath = tableView.indexPath(for: cell) {
+                let post = posts[indexpath.row]
+                detailView?.post = post
+            }
         }
+
     }
     
 }
