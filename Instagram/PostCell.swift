@@ -14,13 +14,14 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var textViewPost: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var likeCount: UILabel!
     
     var indexPath : IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        userImageView.layer.cornerRadius = 35
+        userImageView.layer.cornerRadius = 40
         userImageView.clipsToBounds = true
     }
 
