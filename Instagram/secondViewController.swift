@@ -18,7 +18,6 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
     var window: UIWindow?
     var posts: [Post] = []
     var likess = 0
-    let user: PFUser = "" as! PFUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,8 +118,7 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         let post = posts[indexPath.row]
-//        cell.indexPath = indexPath
-        if let imageFile : PFFile = post.media {
+        if let imageFile: PFFile = post.media {
             imageFile.getDataInBackground { (data, error) in
                 if (error != nil) {
                     print(error.debugDescription)
@@ -130,7 +128,9 @@ class secondViewController: UIViewController, UIImagePickerControllerDelegate, U
                 }
             }
         }
-        cell.usernameLabel.text = user.username
+        
+        let user = post.author
+//        cell.usernameLabel.text = user 
         cell.textViewPost.text = post.caption
         cell.likeCount.text = post.likesCount as? String
         return cell

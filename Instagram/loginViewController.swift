@@ -99,9 +99,9 @@ class loginViewController: UIViewController {
         self.present(alertController, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let loginView = segue.destination as? secondViewController
-            loginView?.user = PFUser.current() 
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let loginView = segue.destination as? secondViewController
+////        loginView?.user = PFUser.current()! 
+//    }
     
 }
